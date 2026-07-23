@@ -8,9 +8,7 @@ function SubredditCard({subreddit,onDelete}) {
         setError("");
         setIsLoading(true);
         try{
-    const response = await fetch(
-        `http://localhost:3000/api/posts/${subreddit.name}`
-    );
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${subreddit.name}`);
 
     const responseData = await response.json();
 
