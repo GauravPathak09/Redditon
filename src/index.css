@@ -1,0 +1,224 @@
+body{
+  margin:0;
+  background-color: hsl(204, 9%, 11%);
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+.subCard {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.subreddit-card {
+    position: relative;
+
+    width: 350px;
+    flex-shrink: 0;
+
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    padding: 16px;
+}
+.outer-modal{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(9, 8, 8, 0.344);
+}
+.modal{
+  background:rgb(35, 34, 35);
+  padding: 20px;
+  
+  border-radius: 10px;
+  width: 400px;
+  overflow-y: auto;
+  max-height: 100vh;
+  
+}
+.modal h2{
+  color:rgb(2, 165, 235);
+  font-size: 24px;
+  font-weight: 600;
+
+}
+.modal-actions{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top:20px;
+  padding:10px 20px;
+  
+}
+.modal input{
+  width: 200px;
+  padding: 10px;
+  margin-left:90px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff1c;
+  color: antiquewhite;
+}
+.modal-actions button{
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff1c;
+  cursor: pointer;
+  color:aliceblue
+}
+.modal-header{
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+  
+  
+}
+.close-btn{
+  position: absolute;
+  top:0;
+  color:#7d7373;
+  right:0;
+  background:none;
+  border:none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}
+.App{
+  padding:24px;
+  
+
+}
+.subreddit-list {
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap;
+
+    padding-bottom: 10px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.reddit-logo {
+    font-size: 40px;
+    color: #FF4500;
+    margin-top:5px;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    color:rgba(217, 191, 191, 0.863);
+    font-weight: bold;
+}
+.app-header button {
+    padding: 10px 18px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background-color: #FF4500;
+    transition: background-color 0.3s ease;
+}
+.app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.add-btn{
+  font-size: 20px;
+  border-radius: 50%;
+  transition: color 0.3s ease;
+}
+
+.subreddit-header {
+    display: grid;
+    grid-template-columns: 40px 1fr 70px;
+    align-items: center;
+}
+
+.subreddit-header h2 {
+    margin: 0;
+    text-align: center;
+    color:rgb(199, 178, 136)
+}
+
+.sub-fns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.sub-fns button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color:bisque;
+    transition: color 0.3s ease;
+}
+.refresh:hover {
+    color: #5aace3;
+}
+.delete:hover {
+    color: #ff4500;
+}
+.cancel:hover{
+  background-color:#cd3535;
+  color:white;
+}
+.add:hover{
+  background-color:#c86bf3;
+  color:white;
+}
+.close-btn:hover{
+  color: #aca29f;
+  
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+    color:#5aace3
+}
+.refresh:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.loading{
+  color: #fff;
+ 
+}
+.error {
+    min-height: 24px;
+    margin: 8px 0 0;
+    color: red;
+    text-align: center;
+}
