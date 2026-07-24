@@ -39,9 +39,7 @@ function AddModal({subreddits, onAddSubreddit, onClose}) {
 
 async function isValidSubreddit(name) {
     try {
-        const response = await fetch(
-            `http://127.0.0.1:3000/api/posts/${encodeURIComponent(name)}`
-        );
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${name}`)
 
         const data = await response.json();
 
