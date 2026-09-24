@@ -1,3 +1,4 @@
+import { useState } from "react";
 function Post({ post }) {
      const [expanded, setExpanded] = useState(false);
     return (
