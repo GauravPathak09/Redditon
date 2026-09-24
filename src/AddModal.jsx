@@ -72,7 +72,7 @@ async function isValidSubreddit(name) {
             event.preventDefault();
             handleAdd();
                 }}>
-         <input
+         <input autoFocus
              value={subredditName}
                 onChange={(event) => {
                           setSubredditName(event.target.value);

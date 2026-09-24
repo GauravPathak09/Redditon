@@ -4,6 +4,19 @@ import Post from "./Post";
 function SubredditCard({subreddit,onDelete}) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
+    const [sortBy,setSortBy]=useState("default");
+    const[ posts,setPosts]=useState([]);
+    const sortedPosts=[...posts].sort((a,b)=>{
+        switch(sortBy){
+            case "upvotes":
+                return b.data.ups-a.data.ups;
+            case "upvotes-low":
+                return a.data.ups-b.data.ups;
+                
+            default:
+                return 0;
+        }
+    });
     async function fetchPosts() {
         setError("");
         setIsLoading(true);
@@ -30,7 +43,7 @@ catch(error){
             setIsLoading(false);
         }
 }
-    const[ posts,setPosts]=useState([]);
+    
     useEffect(() => {
     console.log(`Fetching posts for r/${subreddit.name}`);
     fetchPosts();}, [subreddit.name]);
@@ -45,6 +58,19 @@ catch(error){
            </div>
            </div>
 
+    <div className="sort-container">
+      <label htmlFor="sort">Sort by: </label>
+
+      <select
+        id="sort"
+        value={sortBy}
+        onChange={(e) => setSortBy(e.target.value)}
+      >
+        <option value="default">Default</option>
+        <option value="upvotes">Most upvoted</option>
+        <option value="upvotes-low">Least upvoted</option>
+      </select>
+    </div>
        {isLoading?(
         <p className="loading">
     <FiRefreshCw className="spin" /> Loading...
@@ -52,7 +78,7 @@ catch(error){
        ):error?(
         <p className="error">{error}</p>
        ):(
-         posts.map(post => (
+         sortedPosts.map(post => (
     <Post
         key={post.data.id}
         post={post.data}

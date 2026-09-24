@@ -1,4 +1,5 @@
 function Post({ post }) {
+     const [expanded, setExpanded] = useState(false);
     return (
         <div className="subCard">
             <h3>
@@ -6,7 +7,19 @@ function Post({ post }) {
                     {post.title}
                 </a>
             </h3>
-            <p>{post.selftext}</p>
+            <p className={`post-text ${expanded ? "expanded" : ""}`}>
+                {post.selftext}
+            </p>
+
+            {post.selftext && post.selftext.length > 150 && (
+                <button
+                    className="see-more"
+                    onClick={() => setExpanded(!expanded)}
+                >
+                    {expanded ? "See less" : "See more"}
+                </button>
+            )}
+
             <p>⬆️ {post.ups}</p>
         </div>
     );
