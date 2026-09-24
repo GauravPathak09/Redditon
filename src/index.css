@@ -256,3 +256,13 @@ body{
     padding: 12px;
     margin-top: 12px;
 }
+.subCard h3 a {
+    color: #ff4500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.subCard h3 a:hover {
+    color: #ff7043;
+    text-decoration: underline;
+}
