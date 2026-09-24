@@ -309,3 +309,19 @@ body{
     color: #ff4500;
     text-decoration: underline;
 }
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  color: #f1f1f1;
+}
+
+.sort-container select {
+  padding: 8px 12px;
+  background-color: #222;
+  color: #f1f1f1;
+  border: 1px solid #555;
+  border-radius: 6px;
+  cursor: pointer;
+}
