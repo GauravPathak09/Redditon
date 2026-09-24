@@ -22,7 +22,7 @@ function App() {
         }
     ]);
   }
-   
+  
    const [isModalOpen, setIsModalOpen] = useState(false);
    const closeModal = () => setIsModalOpen(false);
 
@@ -38,12 +38,11 @@ function App() {
       </header>
       <div className="subreddit-list">
       {subreddits.map(subreddit=>(
-        <SubredditCard 
-      subreddit={subreddit} 
-      key={subreddit.id}
-      
-      onDelete={deleteSubreddit}
-      />
+            <SubredditCard 
+               subreddit={subreddit} 
+               key={subreddit.id}
+               onDelete={deleteSubreddit}
+            />
       ))}
       </div>
    
